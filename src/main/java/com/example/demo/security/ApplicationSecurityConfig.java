@@ -96,6 +96,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     // 단점은 로그아웃할수있는 방법이 없음, 모든 요청에 대해서 비밀번호를 헤더에 넣어서 서버로 요청하기 때문
 
 
+    // 유저 정보를 db에서 fetch 하는 method
+    //
     @Override
     @Bean
     protected UserDetailsService userDetailsService() {
