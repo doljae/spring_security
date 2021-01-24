@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Set;
 
-//UserDetails대신에 사용할 클래스를 만들어주었음
+//UserDetails 대신에 사용할 클래스를 만들어주었음
 public class ApplicationUser implements UserDetails {
     private final String username;
     private final String password;
