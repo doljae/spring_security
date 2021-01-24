@@ -4,26 +4,26 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Set;
 
 //UserDetails대신에 사용할 클래스를 만들어주었음
 public class ApplicationUser implements UserDetails {
-
-    private final List<? extends GrantedAuthority> grantedAuthorities;
-    private final String password;
     private final String username;
+    private final String password;
+    private final Set<? extends GrantedAuthority> grantedAuthorities;
     private final boolean isAccountNonExpired;
     private final boolean isAccountNonLocked;
     private final boolean isCredentialsNonExpired;
     private final boolean isEnabled;
 
-    public ApplicationUser(List<? extends GrantedAuthority> grantedAuthorities,
-                           String password,
-                           String username,
-                           boolean isAccountNonExpired,
-                           boolean isAccountNonLocked,
-                           boolean isCredentialsNonExpired,
-                           boolean isEnabled) {
+    public ApplicationUser(
+            String username,
+            String password,
+            Set<? extends GrantedAuthority> grantedAuthorities,
+            boolean isAccountNonExpired,
+            boolean isAccountNonLocked,
+            boolean isCredentialsNonExpired,
+            boolean isEnabled) {
         this.grantedAuthorities = grantedAuthorities;
         this.password = password;
         this.username = username;
